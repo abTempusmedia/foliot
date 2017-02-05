@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Role;
 
 class UsersController extends Controller
 {
@@ -16,9 +17,10 @@ class UsersController extends Controller
      */
     public function index()
     {
+        $roles = Role::all();
         $users = User::with('roles')->get();
 
-       return view('admin.users.index', compact('users'));
+       return view('admin.users.index', compact('users', 'roles'));
     }
 
     /**
@@ -28,7 +30,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -39,7 +41,11 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $user = User::create($request->except('role'));
+       $user->assignRole($request->role);
+
+       return back();
+
     }
 
     /**
@@ -61,7 +67,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return response()->json($user);
     }
 
     /**
@@ -73,7 +80,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $user = User::find($id);
+
+       $user = User::create($request->except('role'));
+       $user->assignRole($request->role);
+
+       return response()->json($user);
     }
 
     /**

@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Database\Seeder;
 use App\Role;
@@ -30,19 +30,28 @@ class UsersTableSeeder extends Seeder {
         $users = [
             [
                 'name' => 'adminUser',
+                'first_name' => 'Nikolina',
+                'last_name' => 'Hrga',
+                'mobile' => '0997540779',
                 'email' => 'admin@foliot.com',
                 'password' => bcrypt('admin'),
                 'active' => true,
                 'remember_token' => str_random(10),
             ],
             [   'name' => 'assistanceUser',
+                'first_name' => 'Marija',
+                'last_name' => 'Doe',
+                'mobile' => '091445445',
                 'email' => 'assistance@foliot.com',
                 'password' => bcrypt('assistance'),
                 'active' => true,
                 'remember_token' => str_random(10),
             ],
             [
+                'first_name' => 'Jane',
+                'last_name' => 'Doe',
                 'name' => 'teacherUser',
+                'mobile' => '098225225',
                 'email' => 'teacher@foliot.com',
                 'password' => bcrypt('teacher'),
                 'active' => true,
