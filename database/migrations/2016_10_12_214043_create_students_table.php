@@ -20,7 +20,7 @@ class CreateStudentsTable extends Migration
             $table->string('parrent_name_1');
             $table->string('parrent_name_2');
             $table->date('birth_date');
-            $table->string('addres');
+            $table->string('address');
             $table->string('school');
             $table->string('email')->unique();
             $table->string('telephone');

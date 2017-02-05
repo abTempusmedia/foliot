@@ -17,7 +17,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
+    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -26,6 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+   
 
     public function roles()
     {
@@ -35,9 +36,10 @@ class User extends Authenticatable
    public function hasRole($name)
     {
         foreach ($this->roles as $role) {
-            If($role->name == 'administrator'){
+            If($role->name == $name){
                 return true;
             }
+            return false;
         }
     }
 
@@ -50,4 +52,5 @@ class User extends Authenticatable
     {
         return $this->roles()->detach($role);
     }   
+
 }

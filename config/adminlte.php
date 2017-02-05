@@ -117,27 +117,17 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
-        'ACCOUNT SETTINGS',
+        'POSTAVKE KORISNIKA',
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],
-        [
-            'text'    => 'Multilevel',
+            'text'    => 'Korisnici',
             'icon'    => 'share',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Popis korisnika',
+                    'url'  => '/admin/users',
                 ],
                 [
-                    'text'    => 'Level One',
+                    'text'    => 'Dodaj novog',
                     'url'     => '#',
                     'submenu' => [
                         [

@@ -12,14 +12,20 @@
 */
 
 
+ Route::group(['prefix' => 'admin', 'middleware' =>'auth'], function () {
+
+     Route::resource('users', 'UsersController');
+        
+    });        
 
 Auth::routes();
 
 Route::get('/', 'DashboardController@index');
 Route::get('/test', function(){
 
-	$user = App\User::first();
-	
-	
+	$students = App\Student::all();
+
+	return $students;
 });
+
 

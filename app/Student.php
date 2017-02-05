@@ -13,12 +13,12 @@ class Student extends Model
     'parrent_name_1',
     'parrent_name_2',
     'birth_date',
-    'addres',
+    'address',
     'school',
     'email',
     'telephone',
     'mobile',
     'single_childe',
     'note',
-    ]
+    ];
 }
